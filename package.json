@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "puf17640",
   "license": "ISC",
+  "scripts": {
+    "lint": "eslint index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/puf17640/npm-stonks.git"
@@ -20,5 +23,9 @@
     "@aero/centra": "1.0.3",
     "cli-progress": "3.8.2",
     "sleep-async": "1.0.5"
+  },
+  "devDependencies": {
+    "@aero/eslint-config": "1.0.1",
+    "eslint": "7.3.1"
   }
 }

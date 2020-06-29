@@ -3,7 +3,6 @@
 	const request = require('@aero/centra')
 		sleep = require('sleep-async'),
 		cliProgress = require('cli-progress')
-		
 	const progress = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 	const [,, mod, count] = process.argv
 	if (!mod || !count) return
