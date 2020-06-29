@@ -1,0 +1,23 @@
+{
+  "name": "npm-stonks",
+  "version": "1.0.0",
+  "description": "does what it does",
+  "main": "index.js",
+  "author": "puf17640",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puf17640/npm-stonks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/puf17640/npm-stonks/issues"
+  },
+  "homepage": "https://github.com/puf17640/npm-stonks#readme",
+  "bin": {
+    "npm-stonks": "./index.js"
+  },
+  "dependencies": {
+    "@aero/centra": "1.0.3",
+    "sleep-async": "1.0.5"
+  }
+}
