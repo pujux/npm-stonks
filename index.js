@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 (async () => {
-	const request = require('@aero/centra')
+	const request = require('@aero/centra'),
 		sleep = require('sleep-async'),
 		cliProgress = require('cli-progress')
 	const progress = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic)
 	const [,, mod, count] = process.argv
-	if (!mod || !count) return
-	console.log(`Adding ${count} downloads to '${mod}'.\n`)
+	if (!mod || !count) return console.log('You need to specify a module and a download count.')
 	const data = await request(`https://registry.npmjs.org/${mod}`).json()
 	if (data.error)	return console.error(`Could not find module '${mod}'.`)
+	else console.log(`Adding ${count} downloads to '${mod}'.\n`)
 	const tarballUrl = data.versions[data['dist-tags'].latest].dist.tarball
 	progress.start(count, 0)
 	for (let counter = 1; counter <= count;) {
@@ -19,5 +19,5 @@
 		}
 	}
 	progress.stop()
-	console.log(`\nDone!`)
+	console.log(`\nDone!\nhttps://npmjs.com/${mod}`)
 })()
